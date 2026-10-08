@@ -115,14 +115,12 @@ data "aws_ami" "ubuntu" {
 
 # 7. EC2 Instance
 resource "aws_instance" "mujeebah_server" {
-  ami                    = data.aws_ami.ubuntu.id
-  instance_type          = var.instance_type
-  subnet_id              = aws_subnet.public_subnet.id
-  vpc_security_group_ids = [aws_security_group.web_sg.id]
-  key_name               = var.key_name
+  ami           = "ami-0c7217cdde317cfec" # or your dynamic data source
+  instance_type = var.instance_type
+  key_name      = var.key_name
 
   tags = {
-    Name = "mujeebah-server"
+    Name = "mujeebah_server"
   }
 }
 

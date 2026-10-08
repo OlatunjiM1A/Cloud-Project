@@ -1,30 +1,24 @@
 variable "aws_region" {
+  description = "AWS region where resources will be provisioned"
   type        = string
-  default     = "us-east-1"
-  description = "Target AWS region"
 }
 
 variable "vpc_cidr" {
-  type        = string
-  default     = "10.0.0.0/16"
   description = "CIDR block for VPC"
+  type        = string
 }
 
 variable "subnet_cidr" {
-  type        = string
-  default     = "10.0.1.0/24"
   description = "CIDR block for public subnet"
+  type        = string
 }
 
 variable "instance_type" {
-  type        = string
-  default     = "t2.micro"
   description = "EC2 instance size"
+  type        = string
 }
 
 variable "key_name" {
+  description = "Name of the existing EC2 Key Pair for SSH access"
   type        = string
-  description = "Name of your existing AWS SSH Key Pair"
 }
-
-
